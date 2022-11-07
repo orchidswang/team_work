@@ -8,8 +8,81 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="stylesheet" href="css/index.css">
+        <script type="text/javascript" src="js/main.js"></script>
+
 </head>
     <body>
+    <div id="mask"></div>
+
+    <!--设置-->
+    <div id="set">
+        <div>
+            <a href="javascript:void(0)" onclick="display('set_windows')"><img src="css/material/设置.png"></a>
+        </div>
+
+        <!--设置窗口-->
+        <div id="set_windows" class="window_css">
+            <div >
+                <p style="text-align: center"><a href="javascript:void(0)" onclick="display('add_bookmark_windows')">创建书签</a></p>
+            </div>
+
+            <a href="javascript:void(0)" onclick="hide('set_windows')">
+                <p style="text-align: center">关闭窗口</p>
+            </a>
+        </div>
+
+        <!--添加书签窗口-->
+        <div id="add_bookmark_windows">
+            <a href="javascript:void(0)" onclick="hide('add_bookmark_windows')">关闭窗口000<br></a>
+
+
+                <from action="Servlet" method="post">
+
+                    <input type="text" class="AddBookmark" name="Bookmark" placeholder="请输入需要添加的网页(例:https://www.bilibili.com/)"><br>
+                    <input type="submit" onclick=location.href="index.html">
+
+                </from>
+
+
+        </div>
+    </div>
+
+    <div><a href="javascript:void(0)" onclick="display('login')">登录</a></div>
+    <div><a href="javascript:void(0)" onclick="display('register')">注册</a></div>
+
+
+        <div id="login">
+            <a href="javascript:void(0)" onclick="hide('login')">
+                <div>
+
+                    <a href="javascript:void(0)" onclick="hide('login')">关闭窗口111
+                    </a>
+
+
+
+                    <from action="loginServlet" method="post">
+                        <label for="user">用户名：<br></label>
+                        <input  type="text" id="user" name="user" value="" maxlength="15" placeholder="请输入用户名"></br>
+                        <label for="password">密码：<br></label>
+                        <input type="password" id="password" name="password" value="" maxlength="20" placeholder="请输入密码"></br>
+                        <input type="submit" onclick=location.href="index.html">
+
+                    </from>
+                </div>
+
+
+
+
+
+            </a>
+        </div>
+
+        <div id="register">
+            <a href="javascript:void(0)" onclick="hide('register')">
+                <p style="text-align: center"> 关闭窗口222</p>
+            </a>
+        </div>
+
         <div id="logo">
             <p><img src="css/material/logo.png" width="260" alt=""></p>
         </div>
@@ -18,12 +91,13 @@
         <div id="select">
             <form action="https://cn.bing.com/search" autocomplete="off" target="_blank">
                 <div id="search_box">
-                    <label>
-                        <input type="search" name="q" placeholder="                  请输入搜索的内容" autofocus>
-                    </label>
-                    <input type="submit" id="search"value="">
+
+                    <input class="search_input" type="search" name="q" placeholder="                  请输入搜索的内容" autofocus>
+
+                    <input class="search_input" type="submit" id="search"value="">
              </div>
             </form>
+
         </div>
 
 
@@ -39,140 +113,20 @@
             </div>
 
             <div>
-                <a href="http://www.bilibili.com" target="_blank">
+                <a href = "" target="_blank">
                     <div class="bookmarks">
-                        <img src="https://www.bilibili.com/favicon.ico">
+                        <img src=>
 
                     </div>
                 </a>
+
+
             </div>
 
-            <div>
-                <a href="http://www.bilibili.com" target="_blank">
-                    <div class="bookmarks">
-                        <img src="https://www.bilibili.com/favicon.ico">
 
-                    </div>
-                </a>
-            </div>
-
-            <div>
-                <a href="http://www.bilibili.com" target="_blank">
-                    <div class="bookmarks">
-                        <img src="https://www.bilibili.com/favicon.ico">
-
-                    </div>
-                </a>
-            </div>
-
-            <div>
-                <a href="http://www.bilibili.com" target="_blank">
-                    <div class="bookmarks">
-                        <img src="https://www.bilibili.com/favicon.ico">
-
-                    </div>
-                </a>
-            </div>
-
-            <div>
-                <a href="http://www.bilibili.com" target="_blank">
-                    <div class="bookmarks">
-                        <img src="https://www.bilibili.com/favicon.ico">
-
-                    </div>
-                </a>
-            </div>
-
-            <div>
-                <a href="http://www.bilibili.com" target="_blank">
-                    <div class="bookmarks">
-                        <img src="https://www.bilibili.com/favicon.ico">
-
-                    </div>
-                </a>
-            </div>
-
-            <div>
-                <a href="http://www.bilibili.com" target="_blank">
-                    <div class="bookmarks">
-                        <img src="https://www.bilibili.com/favicon.ico">
-
-                    </div>
-                </a>
-            </div>
-
-            <div>
-                <a href="http://www.bilibili.com" target="_blank">
-                    <div class="bookmarks">
-                        <img src="https://www.bilibili.com/favicon.ico">
-
-                    </div>
-                </a>
-            </div>
-
-            <div>
-                <a href="http://www.bilibili.com" target="_blank">
-                    <div class="bookmarks">
-                        <img src="https://www.bilibili.com/favicon.ico">
-
-                    </div>
-                </a>
-            </div>
-
-            <div>
-                <a href="http://www.bilibili.com" target="_blank">
-                    <div class="bookmarks">
-                        <img src="https://www.bilibili.com/favicon.ico">
-
-                    </div>
-                </a>
-            </div>
-
-            <div>
-                <a href="http://www.bilibili.com" target="_blank">
-                    <div class="bookmarks">
-                        <img src="https://www.bilibili.com/favicon.ico">
-
-                    </div>
-                </a>
-            </div>
-
-            <div>
-                <a href="http://www.bilibili.com" target="_blank">
-                    <div class="bookmarks">
-                        <img src="https://www.bilibili.com/favicon.ico">
-
-                    </div>
-                </a>
-            </div>
-
-            <div>
-                <a href="http://www.bilibili.com" target="_blank">
-                    <div class="bookmarks">
-                        <img src="https://www.bilibili.com/favicon.ico">
-
-                    </div>
-                </a>
-            </div>
-
-            <div>
-                <a href="http://www.bilibili.com" target="_blank">
-                    <div class="bookmarks">
-                        <img src="https://www.bilibili.com/favicon.ico">
-
-                    </div>
-                </a>
-            </div>
-
-            <div>
-                <a href="http://www.bilibili.com" target="_blank">
-                    <div class="bookmarks">
-                        <img src="https://www.bilibili.com/favicon.ico">
-
-                    </div>
-                </a>
-            </div>
         </div>
+
+
 
 
     </body>
