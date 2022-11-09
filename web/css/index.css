@@ -38,7 +38,7 @@
     float: right;
 }
 
-.AddBookmark {
+.inputBookmark {
     width: 380px;
     height: 30px;
     border: 1px solid #5687a0;
@@ -90,24 +90,12 @@
 
 
 
-.window_css {
-    display: none;
-    position: absolute;
-    width: 180px;
-    height: 220px;
-    left: 12px;
-    top: 14px;
-
-    background: #FFFFFF;
-    border-radius: 6px;
-}
-
 #add_bookmark_windows {
     display: none;
     position: absolute;
     width: 600px;
     height: 440px;
-    left: 660px;
+    left: 35%;
     top: 300px;
 
     background: #FFFFFF;
@@ -119,7 +107,7 @@
     position: absolute;
     width: 600px;
     height: 440px;
-    left: 660px;
+    left: 35%;
     top: 300px;
 
     background: #FFFFFF;
@@ -131,7 +119,7 @@
     position: absolute;
     width: 600px;
     height: 550px;
-    left: 660px;
+    left: 35%;
     top: 230px;
 
     background: #FFFFFF;
