@@ -23,6 +23,34 @@ function addBookmark(id){
 
 }
 
+function addbookmark(id){
 
+    if(localStorage.getItem('bookmark'.concat(id))==null){
+        hide('bookmark'.concat(id));
+        document.getElementById('add'.concat(id)).onclick = function() {display('add_bookmark_windows')};
+    }
 
+    if(localStorage.getItem('bookmark'.concat(id))!=null && localStorage.getItem('bookmark'.concat(id))!="") {
+        hide('add'.concat(id));
+        document.getElementById('href'.concat(id)).href = localStorage.getItem('bookmark'.concat(id));
+        document.getElementById('img'.concat(id)).src = localStorage.getItem('icon'.concat(id));
+    }
 
+    document.getElementById('addBookmark').onclick =function (){add(id)};
+
+}
+
+function add(id){
+    addBookmark(id);
+    location.reload();
+}
+
+function determine_empty(id){
+    if(localStorage.getItem('bookmark'.concat(id-1)) ==null && localStorage.getItem('bookmark'.concat(id)) ==null){
+        hide("add".concat(id));
+        hide("bookmark".concat(id))
+    }
+    else {
+        addbookmark(id);
+    }
+}

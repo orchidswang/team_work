@@ -14,21 +14,12 @@
 </head>
     <body>
     <div id="mask"></div>
-    <div>
 
+    <div id="add_bookmark_windows">
+        <a href="javascript:void(0)" onclick="hide('add_bookmark_windows')">关闭窗口000<br></a>
+        <input type="text" class="inputBookmark" name="Bookmark" placeholder="请输入需要添加的网页(例:https://www.bilibili.com/)"><br>
+        <button id="addBookmark" onclick="">添加书签</button>
     </div>
-
-
-
-
-        <div id="add_bookmark_windows">
-            <a href="javascript:void(0)" onclick="hide('add_bookmark_windows')">关闭窗口000<br></a>
-            <form action="AddServlet">
-                    <input type="text" class="inputBookmark" name="Bookmark" placeholder="请输入需要添加的网页(例:https://www.bilibili.com/)"><br>
-                    <button class="addBookmark" onclick="addBookmark('1')">添加书签</button>
-            </form>
-        </div>
-
 
     <div><a href="javascript:void(0)" onclick="display('login')">登录</a></div>
     <div><a href="javascript:void(0)" onclick="display('register')">注册</a></div>
@@ -40,8 +31,6 @@
 
                     <a href="javascript:void(0)" onclick="hide('login')">关闭窗口111
                     </a>
-
-
 
                     <form action="index" method="post">
                         <label for="user">用户名：<br></label>
@@ -86,40 +75,140 @@
 
         <div id="bookmarks_box" >
 
-            <div>
-                <a id="bookmark1" href = "" target="_blank">
-                    <div class="bookmarks">
-                        <img id="img1" src="">
-                        <script>
-                            if(localStorage.getItem('bookmark1')==null){
-                                document.getElementById('bookmark1').onclick = function() {display('add_bookmark_windows')};
-                            }
-                            if(localStorage.getItem('bookmark1')!=null) {
-                                document.getElementById('bookmark1').href = localStorage.getItem('bookmark1');
-                                document.getElementById('img1').src = localStorage.getItem('icon1');
-                            }
-                        </script>
+
+           <div class="bookmarks" id="bookmark1">
+                <a  href = "" target="_blank" id="href1">
+                    <div >
+                        <img id="img1" src="" height="40">
                     </div>
                 </a>
-
-                <div>
-                     <a id="bookmark2" href = "" target="_blank">
-                        <div class="bookmarks">
-                            <img id="img2" src="">
-
-                        </div>
-                    </a>
-                    <script>
-                        if(localStorage.getItem('bookmark2')==null){
-                            document.getElementById('bookmark2').onclick = function() {display('add_bookmark_windows')};
-                        }
-                        if(localStorage.getItem('bookmark2')!=null) {
-                            document.getElementById('bookmark2').href = localStorage.getItem('bookmark2');
-                            document.getElementById('img2').src = localStorage.getItem('icon2');
-                        }
-                    </script>
-                </div>
             </div>
+           <div class="add" id="add1">
+                <a  href = "" target="_blank">
+
+                </a>
+            </div>
+           <script>
+                    addbookmark("1");
+                </script>
+
+           <div class="bookmarks" id="bookmark2">
+                <a  href = "" target="_blank" id="href2">
+                    <div >
+                        <img id="img2" src="" height="40">
+                    </div>
+                </a>
+            </div>
+           <div class="add" id="add2">
+                <a  href = "" target="_blank">
+
+                </a>
+            </div>
+           <script>
+                determine_empty(2);
+            </script>
+
+           <div class="bookmarks" id="bookmark3">
+                <a  href = "" target="_blank" id="href3">
+                    <div >
+                        <img id="img3" src="" height="40">
+                    </div>
+                </a>
+            </div>
+           <div class="add" id="add3">
+                <a  href = "" target="_blank">
+
+                </a>
+            </div>
+           <script>
+                determine_empty(3);
+            </script>
+
+            <div class="bookmarks" id="bookmark4">
+                <a  href = "" target="_blank" id="href4">
+                    <div >
+                        <img id="img4" src="" height="40">
+                    </div>
+                </a>
+            </div>
+            <div class="add" id="add4">
+                <a  href = "" target="_blank">
+
+                </a>
+            </div>
+            <script>
+                determine_empty(4);
+            </script>
+
+            <div class="bookmarks" id="bookmark5">
+                <a  href = "" target="_blank" id="href5">
+                    <div >
+                        <img id="img5" src="" height="40">
+                    </div>
+                </a>
+            </div>
+            <div class="add" id="add5">
+                <a  href = "" target="_blank">
+
+                </a>
+            </div>
+            <script>
+                determine_empty(5);
+            </script>
+
+            <div class="bookmarks" id="bookmark6">
+                <a  href = "" target="_blank" id="href6">
+                    <div >
+                        <img id="img6" src=""height="40">
+                    </div>
+                </a>
+            </div>
+            <div class="add" id="add6">
+                <a  href = "" target="_blank">
+
+                </a>
+            </div>
+            <script>
+                determine_empty(6);
+            </script>
+
+            <div class="bookmarks" id="bookmark7">
+                <a  href = "" target="_blank" id="href7">
+                    <div >
+                        <img id="img7" src="" height="40">
+                    </div>
+                </a>
+            </div>
+            <div class="add" id="add7">
+                <a  href = "" target="_blank">
+
+                </a>
+            </div>
+            <script>
+                determine_empty(7);
+            </script>
+
+            <div class="bookmarks" id="bookmark8">
+                <a  href = "" target="_blank" id="href8">
+                    <div >
+                        <img id="img8" src="" height="40">
+                    </div>
+                </a>
+            </div>
+            <div class="add" id="add8">
+                <a  href = "" target="_blank">
+
+                </a>
+            </div>
+            <script>
+                determine_empty(8);
+            </script>
+
+
+
+
+
+
 
         </div>
 

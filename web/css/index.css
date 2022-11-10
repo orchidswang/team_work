@@ -63,7 +63,7 @@
 
 
 .bookmarks  {
-
+    display: block;
     width: 80px;
     height: 80px;
     float: left;
@@ -80,6 +80,32 @@
 
 
     background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.add {
+    display: block;
+    background-image: url("material/new.png");
+    background-position-x: 50%;
+    background-position-y: 50%;
+    background-repeat: no-repeat;
+    background-color: white;
+
+    width: 80px;
+    height: 80px;
+    float: left;
+
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
 }
