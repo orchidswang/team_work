@@ -61,7 +61,7 @@ function determine_empty(id){
 
 function del(id) {
     var n = id;
-    <!--再讲后面的书签依次向前一位-->
+    // <!--再讲后面的书签依次向前一位-->
     while(localStorage.getItem("bookmark".concat(n+1))!=null){
         localStorage.setItem("bookmark".concat(n),localStorage.getItem("bookmark".concat(n+1)))
         localStorage.setItem("icon".concat(n),localStorage.getItem("icon".concat(n+1)))
@@ -70,6 +70,38 @@ function del(id) {
     localStorage.removeItem("bookmark".concat(n))
     localStorage.removeItem("icon".concat(n))
     location.reload();
+}
+
+function register() {
+
+    console.log({'user': $("#r-user").val(), 'password': $("#r-password").val()});
+
+    // $.ajax({
+
+    //     // 请求发送方式
+    //     type: 'post',
+    //     // 验证文件
+    //     url: 'xxxx',
+    //     // 用户输入的帐号密码
+    //     data: {'user': $("#r-user").val(), 'password': $("#r-password").val()},
+    //     // 异步，不写默认为True
+    //     async: true,
+
+    //     //请求成功后的回调
+    //     success: function (data) {
+    //         if (data) {
+
+    //             localStorage.setItem("yes",data);
+    //             alert(data)
+    //         } else {
+    //             alert('帐号或密码错误');
+    //         }
+    //     },
+    //     error: function () {
+    //         alert('服务端异常');
+    //     }
+
+    // });
 }
 
 

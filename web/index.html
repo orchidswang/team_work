@@ -1,28 +1,31 @@
 <!DOCTYPE html>
-<html lang = 'zh'>
-<head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>WeNavi-make your borwser simpler</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang='zh'>
 
-        <link rel="stylesheet" href="css/index.css">
-        <script type="text/javascript" src="js/main.js"></script>
-        <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>WeNavi-make your borwser simpler</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/index.css">
+    <script type="text/javascript" src="js/main.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
 
 </head>
-    <body>
+
+<body>
     <script>
 
-        localStorage.setItem("user","123");
+        localStorage.setItem("user", "123");
     </script>
     <div id="mask"></div>
 
     <div id="add_bookmark_windows">
         <a href="javascript:void(0)" onclick="hide('add_bookmark_windows')">关闭窗口000<br></a>
         <form>
-            <input type="text" class="inputBookmark" name="Bookmark" placeholder="请输入需要添加的网页(例:https://www.bing.com)"><br>
+            <input type="text" class="inputBookmark" name="Bookmark"
+                placeholder="请输入需要添加的网页(例:https://www.bing.com)"><br>
             <button id="addBookmark" onclick="">添加书签</button>
 
         </form>
@@ -34,221 +37,236 @@
     <div><button href="javascript:void(0)" onclick="display('register')">注册</button></div>
 
 
-        <div id="login">
+    <div id="login">
+        <a href="javascript:void(0)" onclick="hide('login')">
+            <div>
+
+                <a href="javascript:void(0)" onclick="hide('login')">关闭窗口111
+                </a>
+
+                <form>
+                    <label for="user">用户名：<br></label>
+                    <input type="text" id="user" name="user" value="" maxlength="15" placeholder="请输入用户名"><br>
+                    <label for="password">密码：<br></label>
+                    <input type="password" id="password" name="password" value="" maxlength="20"
+                        placeholder="请输入密码"><br>
+                    <input type="button" onclick="login()" value="登录">
+
+                </form>
+            </div>
+
+
+
+
+
+        </a>
+    </div>
+
+    <div id="register">
+        <a href="javascript:void(0)" onclick="hide('register')">
+            <p style="text-align: center"> 关闭窗口222</p>
             <a href="javascript:void(0)" onclick="hide('login')">
                 <div>
-
-                    <a href="javascript:void(0)" onclick="hide('login')">关闭窗口111
-                    </a>
-
                     <form>
                         <label for="user">用户名：<br></label>
-                        <input  type="text" id="user" name="user" value="" maxlength="15" placeholder="请输入用户名"><br>
+                        <input type="text" id="r-user" name="user" value="" maxlength="15" placeholder="请输入用户名"><br>
                         <label for="password">密码：<br></label>
-                        <input type="password" id="password" name="password" value="" maxlength="20" placeholder="请输入密码"><br>
-                        <input type="button" onclick="login()">
+                        <input type="password" id="r-password" name="password" value="" maxlength="20"
+                            placeholder="请输入密码"><br>
+                        <input type="button" onclick="register()" value="注册">
 
                     </form>
                 </div>
+            </a>
+        </a>
+    </div>
+
+    <div id="logo">
+        <p><img src="css/material/logo.png" width="260" alt=""></p>
+    </div>
 
 
+    <div id="select">
+        <form action="https://cn.bing.com/search" autocomplete="off" target="_blank">
+            <div id="search_box">
+
+                <input class="search_input" type="search" name="q" placeholder="                  请输入搜索的内容">
+
+                <input class="search_input" type="submit" id="search" value="">
+            </div>
+        </form>
+
+    </div>
 
 
+    <div id="bookmarks_box">
+
+
+        <div class="bookmarks" id="bookmark1">
+            <button class="delete" onclick="del(1)">
+                删除标签
+            </button>
+            <a href="" target="_blank" id="href1">
+                <div>
+                    <img id="img1" src="" height="40">
+                </div>
+            </a>
+        </div>
+        <div class="add" id="add1">
+            <a href="" target="_blank">
 
             </a>
         </div>
+        <script>
+            addbookmark("1");
+        </script>
 
-        <div id="register">
-            <a href="javascript:void(0)" onclick="hide('register')">
-                <p style="text-align: center"> 关闭窗口222</p>
+        <div class="bookmarks" id="bookmark2">
+            <button class="delete" onclick="del(2)">
+                删除标签
+            </button>
+            <a href="" target="_blank" id="href2">
+                <div>
+                    <img id="img2" src="" height="40">
+                </div>
             </a>
         </div>
+        <div class="add" id="add2">
+            <a href="" target="_blank">
 
-        <div id="logo">
-            <p><img src="css/material/logo.png" width="260" alt=""></p>
+            </a>
         </div>
+        <script>
+            determine_empty(2);
+        </script>
 
 
-        <div id="select">
-            <form action="https://cn.bing.com/search" autocomplete="off" target="_blank">
-                <div id="search_box">
-
-                    <input class="search_input" type="search" name="q" placeholder="                  请输入搜索的内容">
-
-                    <input class="search_input" type="submit" id="search"value="">
-             </div>
-            </form>
-
+        <div class="bookmarks" id="bookmark3">
+            <button class="delete" onclick="del(3)">
+                删除标签
+            </button>
+            <a href="" target="_blank" id="href3">
+                <div>
+                    <img id="img3" src="" height="40">
+                </div>
+            </a>
         </div>
+        <div class="add" id="add3">
+            <a href="" target="_blank">
 
-
-        <div id="bookmarks_box" >
-
-
-           <div class="bookmarks" id="bookmark1">
-               <button class="delete" onclick="del(1)">
-                    删除标签
-               </button>
-                <a  href = "" target="_blank" id="href1">
-                    <div >
-                        <img id="img1" src="" height="40">
-                    </div>
-                </a>
-            </div>
-           <div class="add" id="add1">
-                <a  href = "" target="_blank">
-
-                </a>
-            </div>
-           <script>
-                    addbookmark("1");
-                </script>
-
-           <div class="bookmarks" id="bookmark2">
-               <button class="delete" onclick="del(2)">
-                   删除标签
-               </button>
-                <a  href = "" target="_blank" id="href2">
-                    <div >
-                        <img id="img2" src="" height="40">
-                    </div>
-                </a>
-            </div>
-           <div class="add" id="add2">
-                <a  href = "" target="_blank">
-
-                </a>
-            </div>
-           <script>
-                determine_empty(2);
-            </script>
-
-
-            <div class="bookmarks" id="bookmark3">
-                <button class="delete" onclick="del(3)">
-                    删除标签
-                </button>
-                <a  href = "" target="_blank" id="href3">
-                    <div >
-                        <img id="img3" src="" height="40">
-                    </div>
-                </a>
-            </div>
-            <div class="add" id="add3">
-                <a  href = "" target="_blank">
-
-                </a>
-            </div>
-            <script>
-                determine_empty(3);
-            </script>
-
-            <div class="bookmarks" id="bookmark4">
-                <button class="delete" onclick="del(4)">
-                    删除标签
-                </button>
-                <a  href = "" target="_blank" id="href4">
-                    <div >
-                        <img id="img4" src="" height="40">
-                    </div>
-                </a>
-            </div>
-            <div class="add" id="add4">
-                <a  href = "" target="_blank">
-
-                </a>
-            </div>
-            <script>
-                determine_empty(4);
-            </script>
-
-            <div class="bookmarks" id="bookmark5">
-                <button class="delete" onclick="del(5)">
-                    删除标签
-                </button>
-                <a  href = "" target="_blank" id="href5">
-                    <div >
-                        <img id="img5" src="" height="40">
-                    </div>
-                </a>
-            </div>
-            <div class="add" id="add5">
-                <a  href = "" target="_blank">
-
-                </a>
-            </div>
-            <script>
-                determine_empty(5);
-            </script>
-
-            <div class="bookmarks" id="bookmark6">
-                <button class="delete" onclick="del(6)">
-                    删除标签
-                </button>
-                <a  href = "" target="_blank" id="href6">
-                    <div >
-                        <img id="img6" src="" height="40">
-                    </div>
-                </a>
-            </div>
-            <div class="add" id="add6">
-                <a  href = "" target="_blank">
-
-                </a>
-            </div>
-            <script>
-                determine_empty(6);
-            </script>
-
-            <div class="bookmarks" id="bookmark7">
-                <button class="delete" onclick="del(7)">
-                    删除标签
-                </button>
-                <a  href = "" target="_blank" id="href7">
-                    <div >
-                        <img id="img7" src="" height="40">
-                    </div>
-                </a>
-            </div>
-            <div class="add" id="add7">
-                <a  href = "" target="_blank">
-
-                </a>
-            </div>
-            <script>
-                determine_empty(7);
-            </script>
-
-            <div class="bookmarks" id="bookmark8">
-                <button class="delete" onclick="del(8)">
-                    删除标签
-                </button>
-                <a  href = "" target="_blank" id="href8">
-                    <div >
-                        <img id="img8" src="" height="40">
-                    </div>
-                </a>
-            </div>
-            <div class="add" id="add8">
-                <a  href = "" target="_blank">
-
-                </a>
-            </div>
-            <script>
-                determine_empty(8);
-            </script>
-
-
-
-
-
-
-
-
-
-
-
+            </a>
         </div>
+        <script>
+            determine_empty(3);
+        </script>
 
-    </body>
+        <div class="bookmarks" id="bookmark4">
+            <button class="delete" onclick="del(4)">
+                删除标签
+            </button>
+            <a href="" target="_blank" id="href4">
+                <div>
+                    <img id="img4" src="" height="40">
+                </div>
+            </a>
+        </div>
+        <div class="add" id="add4">
+            <a href="" target="_blank">
+
+            </a>
+        </div>
+        <script>
+            determine_empty(4);
+        </script>
+
+        <div class="bookmarks" id="bookmark5">
+            <button class="delete" onclick="del(5)">
+                删除标签
+            </button>
+            <a href="" target="_blank" id="href5">
+                <div>
+                    <img id="img5" src="" height="40">
+                </div>
+            </a>
+        </div>
+        <div class="add" id="add5">
+            <a href="" target="_blank">
+
+            </a>
+        </div>
+        <script>
+            determine_empty(5);
+        </script>
+
+        <div class="bookmarks" id="bookmark6">
+            <button class="delete" onclick="del(6)">
+                删除标签
+            </button>
+            <a href="" target="_blank" id="href6">
+                <div>
+                    <img id="img6" src="" height="40">
+                </div>
+            </a>
+        </div>
+        <div class="add" id="add6">
+            <a href="" target="_blank">
+
+            </a>
+        </div>
+        <script>
+            determine_empty(6);
+        </script>
+
+        <div class="bookmarks" id="bookmark7">
+            <button class="delete" onclick="del(7)">
+                删除标签
+            </button>
+            <a href="" target="_blank" id="href7">
+                <div>
+                    <img id="img7" src="" height="40">
+                </div>
+            </a>
+        </div>
+        <div class="add" id="add7">
+            <a href="" target="_blank">
+
+            </a>
+        </div>
+        <script>
+            determine_empty(7);
+        </script>
+
+        <div class="bookmarks" id="bookmark8">
+            <button class="delete" onclick="del(8)">
+                删除标签
+            </button>
+            <a href="" target="_blank" id="href8">
+                <div>
+                    <img id="img8" src="" height="40">
+                </div>
+            </a>
+        </div>
+        <div class="add" id="add8">
+            <a href="" target="_blank">
+
+            </a>
+        </div>
+        <script>
+            determine_empty(8);
+        </script>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+</body>
+
 </html>
