@@ -13,16 +13,25 @@
 
 </head>
     <body>
+    <script>
+
+        localStorage.setItem("user","123");
+    </script>
     <div id="mask"></div>
 
     <div id="add_bookmark_windows">
         <a href="javascript:void(0)" onclick="hide('add_bookmark_windows')">关闭窗口000<br></a>
-        <input type="text" class="inputBookmark" name="Bookmark" placeholder="请输入需要添加的网页(例:https://www.bilibili.com/)"><br>
-        <button id="addBookmark" onclick="">添加书签</button>
+        <form>
+            <input type="text" class="inputBookmark" name="Bookmark" placeholder="请输入需要添加的网页(例:https://www.bing.com)"><br>
+            <button id="addBookmark" onclick="">添加书签</button>
+
+        </form>
+
+
     </div>
 
-    <div><a href="javascript:void(0)" onclick="display('login')">登录</a></div>
-    <div><a href="javascript:void(0)" onclick="display('register')">注册</a></div>
+    <div><button href="javascript:void(0)" onclick="display('login')">登录</button></div>
+    <div><button href="javascript:void(0)" onclick="display('register')">注册</button></div>
 
 
         <div id="login">
@@ -32,12 +41,12 @@
                     <a href="javascript:void(0)" onclick="hide('login')">关闭窗口111
                     </a>
 
-                    <form action="index" method="post">
+                    <form>
                         <label for="user">用户名：<br></label>
                         <input  type="text" id="user" name="user" value="" maxlength="15" placeholder="请输入用户名"><br>
                         <label for="password">密码：<br></label>
                         <input type="password" id="password" name="password" value="" maxlength="20" placeholder="请输入密码"><br>
-                        <input type="submit">
+                        <input type="button" onclick="login()">
 
                     </form>
                 </div>
@@ -77,6 +86,9 @@
 
 
            <div class="bookmarks" id="bookmark1">
+               <button class="delete" onclick="del(1)">
+                    删除标签
+               </button>
                 <a  href = "" target="_blank" id="href1">
                     <div >
                         <img id="img1" src="" height="40">
@@ -93,6 +105,9 @@
                 </script>
 
            <div class="bookmarks" id="bookmark2">
+               <button class="delete" onclick="del(2)">
+                   删除标签
+               </button>
                 <a  href = "" target="_blank" id="href2">
                     <div >
                         <img id="img2" src="" height="40">
@@ -108,23 +123,30 @@
                 determine_empty(2);
             </script>
 
-           <div class="bookmarks" id="bookmark3">
+
+            <div class="bookmarks" id="bookmark3">
+                <button class="delete" onclick="del(3)">
+                    删除标签
+                </button>
                 <a  href = "" target="_blank" id="href3">
                     <div >
                         <img id="img3" src="" height="40">
                     </div>
                 </a>
             </div>
-           <div class="add" id="add3">
+            <div class="add" id="add3">
                 <a  href = "" target="_blank">
 
                 </a>
             </div>
-           <script>
+            <script>
                 determine_empty(3);
             </script>
 
             <div class="bookmarks" id="bookmark4">
+                <button class="delete" onclick="del(4)">
+                    删除标签
+                </button>
                 <a  href = "" target="_blank" id="href4">
                     <div >
                         <img id="img4" src="" height="40">
@@ -141,6 +163,9 @@
             </script>
 
             <div class="bookmarks" id="bookmark5">
+                <button class="delete" onclick="del(5)">
+                    删除标签
+                </button>
                 <a  href = "" target="_blank" id="href5">
                     <div >
                         <img id="img5" src="" height="40">
@@ -157,9 +182,12 @@
             </script>
 
             <div class="bookmarks" id="bookmark6">
+                <button class="delete" onclick="del(6)">
+                    删除标签
+                </button>
                 <a  href = "" target="_blank" id="href6">
                     <div >
-                        <img id="img6" src=""height="40">
+                        <img id="img6" src="" height="40">
                     </div>
                 </a>
             </div>
@@ -173,6 +201,9 @@
             </script>
 
             <div class="bookmarks" id="bookmark7">
+                <button class="delete" onclick="del(7)">
+                    删除标签
+                </button>
                 <a  href = "" target="_blank" id="href7">
                     <div >
                         <img id="img7" src="" height="40">
@@ -189,6 +220,9 @@
             </script>
 
             <div class="bookmarks" id="bookmark8">
+                <button class="delete" onclick="del(8)">
+                    删除标签
+                </button>
                 <a  href = "" target="_blank" id="href8">
                     <div >
                         <img id="img8" src="" height="40">
@@ -203,6 +237,10 @@
             <script>
                 determine_empty(8);
             </script>
+
+
+
+
 
 
 

@@ -10,13 +10,16 @@ function hide(name) {
 }
 
 
-
+/*将数据存入本地存储空间*/
 function addBookmark(id){
+
+
+
     var ipt = document.querySelector('.inputBookmark')
     var val = ipt.value;
     var val2 = ipt.value.concat('/favicon.ico');
-    localStorage.setItem('bookmark'.concat(id),val)
-    localStorage.setItem('icon'.concat(id),val2)
+    localStorage.setItem('bookmark'.concat(id),val);
+    localStorage.setItem('icon'.concat(id),val2);
     document.getElementById('bookmark'.concat(id)).href = localStorage.getItem('bookmark'.concat(id),val);
     document.getElementById('img'.concat(id)).src = localStorage.getItem('icon'.concat(id),val2);
     ipt.value = null
@@ -43,6 +46,7 @@ function addbookmark(id){
 function add(id){
     addBookmark(id);
     location.reload();
+
 }
 
 function determine_empty(id){
@@ -54,3 +58,51 @@ function determine_empty(id){
         addbookmark(id);
     }
 }
+
+function del(id) {
+    var n = id;
+    <!--再讲后面的书签依次向前一位-->
+    while(localStorage.getItem("bookmark".concat(n+1))!=null){
+        localStorage.setItem("bookmark".concat(n),localStorage.getItem("bookmark".concat(n+1)))
+        localStorage.setItem("icon".concat(n),localStorage.getItem("icon".concat(n+1)))
+        n = n+1;
+    }
+    localStorage.removeItem("bookmark".concat(n))
+    localStorage.removeItem("icon".concat(n))
+    location.reload();
+}
+
+
+function login() {
+
+    $.ajax({
+
+        // 请求发送方式
+        type: 'post',
+        // 验证文件
+        url: 'loginServlet',
+        // 用户输入的帐号密码
+        data: {'user': $("#user").val(), 'password': $("#password").val()},
+        // 异步，不写默认为True
+        async: true,
+
+        //请求成功后的回调
+        success: function (data) {
+            if (data) {
+
+                localStorage.setItem("yes",data);
+                alert(data)
+            } else {
+                alert('帐号或密码错误');
+            }
+        },
+        error: function () {
+            alert('服务端异常');
+        }
+
+    });
+}
+
+
+
+
