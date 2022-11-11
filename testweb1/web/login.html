@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+
+</head>
+<body>
+
+
+<div id="light" class="white_content">
+
+    <a href = "index.html" >点这里关闭本窗口</a></br>
+    <form action="loginServlet" method="post">
+
+        <div>
+        <label for="user">用户名：<br></label>
+            <input id="user" name="user" value="" maxlength="15" placeholder="请输入用户名"></br><br>
+        </div>
+
+        <div>
+        <label for="password">密码：<br></label>
+            <input type="password" id="password" value="" maxlength="20" placeholder="请输入密码"></br><br>
+        </div>
+
+        <div>
+            <input type="submit" onclick="login()">
+        </div>
+
+    </form>
+
+
+</div>
+</body>
+
+</html>

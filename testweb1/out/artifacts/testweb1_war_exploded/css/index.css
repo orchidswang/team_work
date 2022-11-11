@@ -1,0 +1,178 @@
+#logo {
+    margin-top: 80px;
+    text-align: center;
+}
+
+#search_box {
+    width: 800px;
+    height: 60px;
+    margin: 40px auto;
+
+}
+
+.search_input {
+    width: 720px;
+    height: 60px;
+    border: 1px solid #FFFFFF;
+    outline: none;
+
+    font-family:"微软雅黑 Light";
+    font-size: 20px;
+    text-align: center;
+
+    background-image: url("material/Vector.png");
+    background-repeat: no-repeat;
+    background-size: 25px;
+    background-position-y: center;
+    background-position-x: 20px;
+    border-radius: 10px 0px 0px 10px;
+}
+
+#search {
+    width: 80px;
+    height: 60px;
+    background-image: url("material/搜索 2.png");
+    background-repeat: no-repeat;
+    background-color: white;
+    border-radius: 0px 10px 10px 0px;
+    float: right;
+}
+
+.inputBookmark {
+    width: 380px;
+    height: 30px;
+    border: 1px solid #5687a0;
+    outline: #5687a0;
+
+    font-family:"微软雅黑 Light";
+    font-size: 14px;
+    text-align: center;
+
+    border-radius: 4px;
+}
+
+#bookmarks_box {
+    width: 960px;
+    height: 288px;
+    margin:80px auto;
+    background-color: rgba(255,255,255,0.3);
+
+    border-radius: 10px;
+}
+
+
+
+.bookmarks  {
+    display: block;
+    width: 80px;
+    height: 80px;
+    float: left;
+
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.add {
+    display: block;
+    background-image: url("material/new.png");
+    background-position-x: 50%;
+    background-position-y: 50%;
+    background-repeat: no-repeat;
+    background-color: white;
+
+    width: 80px;
+    height: 80px;
+    float: left;
+
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+#set{
+    margin-right:100px;
+}
+
+
+
+#add_bookmark_windows {
+    display: none;
+    position: absolute;
+    width: 600px;
+    height: 440px;
+    left: 35%;
+    top: 300px;
+
+    background: #FFFFFF;
+    border-radius: 6px;
+}
+
+#login {
+    display: none;
+    position: absolute;
+    width: 600px;
+    height: 440px;
+    left: 35%;
+    top: 300px;
+
+    background: #FFFFFF;
+    border-radius: 6px;
+}
+
+#register {
+    display: none;
+    position: absolute;
+    width: 600px;
+    height: 550px;
+    left: 35%;
+    top: 230px;
+
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+
+
+a {
+    text-decoration: none;
+    text-align: center;
+
+}
+
+#mask{
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+body {
+    background: url("material/20200919-WRH_6769.jpg");
+    background-repeat: no-repeat;
+    -webkit-background-size: auto;
+    -o-background-size: cover;
+    background-size: cover;
+}
