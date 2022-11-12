@@ -57,7 +57,6 @@ function determine_empty(id){
     }
     else {
         addbookmark(id);
-        location.reload();
     }
 }
 
@@ -162,6 +161,7 @@ function login_submit(){
                 close_login();
                 alert($("#user").val()+'欢迎登录')
                 getbookmarks()
+                location.reload();
             } else {
                 alert('帐号或密码错误');
             }
