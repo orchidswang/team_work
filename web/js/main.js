@@ -14,14 +14,21 @@ function hide(name) {
 function addBookmark(id){
 
     var ipt = document.querySelector('.inputBookmark')
+    // 书签的地址值
     var val = ipt.value;
+    if (!/(((http|ftp|https):\/\/)?[\w\-_]+(\.[\w\-_]+)+([\w\-.,@?^=%&:/~+#]*[\w\-@?^=%&/~+#])?)/.test(val)) {
+        alert("您输入的地址值不合法，请重新输入");
+        // 若输入地址值不合法，不允许刷新页面
+        return;
+    }
     var val2 = ipt.value.concat('/favicon.ico');
     localStorage.setItem('bookmark'.concat(id),val);
     localStorage.setItem('icon'.concat(id),val2);
     document.getElementById('bookmark'.concat(id)).href = localStorage.getItem('bookmark'.concat(id),val);
     document.getElementById('img'.concat(id)).src = localStorage.getItem('icon'.concat(id),val2);
     ipt.value = null
-
+    // 更新页面
+    location.reload();
 }
 
 function addbookmark(id){
@@ -46,8 +53,6 @@ function addbookmark(id){
 
 function add(id){
     addBookmark(id);
-    location.reload();
-
 }
 
 function determine_empty(id){
