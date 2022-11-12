@@ -3,6 +3,19 @@
     text-align: center;
 }
 
+#top {
+    margin-left: 94%;
+}
+
+.button_login_register {
+    background-color: rgba(255,255,255,0);
+    border: rgba(255,255,255,0);
+    font-size: 20px;
+    font-family: 微软雅黑;
+    font-weight: 500;
+    color: #FFFFFF;
+}
+
 #search_box {
     width: 800px;
     height: 60px;
@@ -39,10 +52,13 @@
 }
 
 .inputBookmark {
-    width: 380px;
-    height: 30px;
-    border: 1px solid #5687a0;
-    outline: #5687a0;
+    width: 500px;
+    height: 48px;
+    border: 2px solid rgba(106, 175, 203, 0.2);
+    outline-color: rgba(106, 175, 203, 0.8);
+    background: #FFFFFF;
+
+    border-radius: 4px;
 
     font-family:"微软雅黑 Light";
     font-size: 14px;
@@ -60,8 +76,6 @@
     border-radius: 10px;
 }
 
-
-
 .bookmarks  {
     display: block;
     width: 80px;
@@ -74,7 +88,7 @@
     margin-left: 20px;
     margin-right: 20px;
 
-    display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -84,9 +98,27 @@
     border-radius: 10px;
 }
 
+#title_in_add{
+    margin-top: 4px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+
+    font-family: '微软雅黑 ';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+
+
+    font-weight: 500;
+    font-size: 20px;
+
+
+}
+
 .add {
     display: block;
     background-image: url("material/new.png");
+    background-size: 30px;
     background-position-x: 50%;
     background-position-y: 50%;
     background-repeat: no-repeat;
@@ -110,45 +142,167 @@
     border-radius: 10px;
 }
 
-#set{
-    margin-right:100px;
+.center-in-center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
-
-
 
 #add_bookmark_windows {
     display: none;
     position: absolute;
-    width: 600px;
-    height: 440px;
-    left: 35%;
-    top: 300px;
+    width: 560px;
+    height: 206px;
 
     background: #FFFFFF;
-    border-radius: 6px;
+    border-radius: 10px;
 }
+
+#add_submit {
+    position: absolute;
+    width: 66px;
+    height: 36px;
+    border: 0px ;
+
+    left: 468px;
+    margin-top: 16px;
+    color: #FFFFFF;
+    font-family: "微软雅黑";
+
+    background: #4F889B;
+    border-radius: 4px;
+}
+
+
 
 #login {
     display: none;
     position: absolute;
-    width: 600px;
-    height: 440px;
-    left: 35%;
-    top: 300px;
+
 
     background: #FFFFFF;
     border-radius: 6px;
+
+    width: 480px;
+    height: 426px;
+
+
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+
+.input {
+
+    width: 400px;
+    height: 48px;
+    border: 2px solid rgba(106, 175, 203, 0.2);
+    outline-color: rgba(106, 175, 203, 0.8);
+    background: #FFFFFF;
+
+    font-family:"微软雅黑 Light";
+    font-size: 14px;
+    text-align: center;
+
+    border-radius: 4px;
+}
+
+::-webkit-input-placeholder {
+    color: #c7c7c7;
+}
+
+.sorter{
+    width: 300px;
+    height: 45px;
+    margin-top: 32px;
+    margin-left: 40px;
+    margin-bottom: 12px;
+
+
+    font-family: '微软雅黑 ';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+
+}
+
+.horizontal_bar {
+
+    width: 20px;
+    height: 5px;
+}
+
+#bar1 {
+    position: absolute;
+    left: 54px;
+    top: 90px;
+}
+
+#bar2 {
+    position: absolute;
+    left: 106px;
+    top: 90px;
+}
+
+
+.button_sorter {
+
+    font-family: '微软雅黑';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 34px;
+
+    color: #BEBEBE;
+
+    background: #FFFFFF;
+    border: 0px ;
+}
+
+
+
+
+
+.input_box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.submit {
+    position: absolute;
+    width: 84px;
+    height: 44px;
+    border: 0px ;
+
+    left: 358px;
+    margin-top: 24px;
+    color: #FFFFFF;
+    font-family: "微软雅黑";
+
+    background: #4F889B;
+    border-radius: 4px;
+}
+
+.title {
+    margin-top: 12px;
+    margin-left: 8px;
+    margin-bottom: 6px;
 }
 
 #register {
     display: none;
-    position: absolute;
-    width: 600px;
-    height: 550px;
-    left: 35%;
-    top: 230px;
 
     background: #FFFFFF;
+    border-radius: 6px;
+
+    width: 480px;
+    height: 426px;
+    background: rgb(255, 255, 255);
     border-radius: 10px;
 }
 
@@ -167,6 +321,28 @@ a {
     bottom: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.3);
+}
+
+#delete_in_login{
+    margin-left: 444px;
+    margin-top: 12px;
+}
+
+#delete_in_register{
+    margin-left: 444px;
+    margin-top: 12px;
+}
+
+#delete_in_add{
+    margin-left: 524px;
+    margin-top: 12px;
+}
+
+
+.delete {
+    border: 1px solid rgb(255, 255, 255);
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
 }
 
 body {

@@ -13,8 +13,6 @@ function hide(name) {
 /*将数据存入本地存储空间*/
 function addBookmark(id){
 
-
-
     var ipt = document.querySelector('.inputBookmark')
     var val = ipt.value;
     var val2 = ipt.value.concat('/favicon.ico');
@@ -30,7 +28,10 @@ function addbookmark(id){
 
     if(localStorage.getItem('bookmark'.concat(id))==null){
         hide('bookmark'.concat(id));
-        document.getElementById('add'.concat(id)).onclick = function() {display('add_bookmark_windows')};
+        document.getElementById('add'.concat(id)).onclick = function() {
+            display('mask')
+            display('add_bookmark_windows')
+        };
     }
 
     if(localStorage.getItem('bookmark'.concat(id))!=null && localStorage.getItem('bookmark'.concat(id))!="") {
@@ -60,8 +61,37 @@ function determine_empty(id){
 }
 
 function del(id) {
+
+    $.ajax({
+
+        // 请求发送方式
+        type: 'post',
+        // 验证文件
+        url: 'loginServlet',
+        // 用户输入的帐号密码
+        data: {'user': localStorage.getItem('user'), 'id': id },
+        // 异步，不写默认为True
+        async: true,
+
+        //请求成功后的回调
+        success: function (data) {
+            if (data) {
+
+                localStorage.setItem("user",$("#user").val());
+                close_login();
+                alert($("#user").val())
+            } else {
+                alert('帐号或密码错误');
+            }
+        },
+        error: function () {
+            alert()
+        }
+    });
+
     var n = id;
-    // <!--再讲后面的书签依次向前一位-->
+
+    <!--再讲后面的书签依次向前一位-->
     while(localStorage.getItem("bookmark".concat(n+1))!=null){
         localStorage.setItem("bookmark".concat(n),localStorage.getItem("bookmark".concat(n+1)))
         localStorage.setItem("icon".concat(n),localStorage.getItem("icon".concat(n+1)))
@@ -72,41 +102,46 @@ function del(id) {
     location.reload();
 }
 
-function register() {
-
-    console.log({'user': $("#r-user").val(), 'password': $("#r-password").val()});
-
-    // $.ajax({
-
-    //     // 请求发送方式
-    //     type: 'post',
-    //     // 验证文件
-    //     url: 'xxxx',
-    //     // 用户输入的帐号密码
-    //     data: {'user': $("#r-user").val(), 'password': $("#r-password").val()},
-    //     // 异步，不写默认为True
-    //     async: true,
-
-    //     //请求成功后的回调
-    //     success: function (data) {
-    //         if (data) {
-
-    //             localStorage.setItem("yes",data);
-    //             alert(data)
-    //         } else {
-    //             alert('帐号或密码错误');
-    //         }
-    //     },
-    //     error: function () {
-    //         alert('服务端异常');
-    //     }
-
-    // });
-}
-
 
 function login() {
 
+    display('mask')
+    display('login')
+
+}
+
+function register(){
+    display('mask')
+    display('register')
+}
+
+function close_login() {
+
+    hide('mask');
+    hide('login');
+}
+
+function close_register(){
+    hide('mask');
+    hide('register');
+}
+
+function to_login(){
+    hide('register');
+    display('login');
+}
+
+function to_regiester(){
+    hide('login');
+    display('register');
+}
+
+function close_add(){
+    hide('mask');
+    hide('add_bookmark_windows')
+}
+
+function login_submit(){
     $.ajax({
 
         // 请求发送方式
@@ -122,18 +157,65 @@ function login() {
         success: function (data) {
             if (data) {
 
-                localStorage.setItem("yes",data);
-                alert(data)
+                localStorage.setItem("user",$("#user").val());
+                close_login();
+                alert($("#user").val()+'欢迎登录')
+                getbookmarks()
             } else {
                 alert('帐号或密码错误');
             }
         },
         error: function () {
-            alert('服务端异常');
+            alert()
         }
-
     });
+
+
+
 }
+
+function register_submit() {
+
+    console.log({'user': $("#r-user").val(), 'password': $("#r-password").val()});
+
+     $.ajax({
+
+    //     // 请求发送方式
+         type: 'post',
+    //     // 验证文件
+         url: 'xxxx',
+    //     // 用户输入的帐号密码
+         data: {'user': $("#newuser").val(), 'password': $("#newpassword").val()},
+    //     // 异步，不写默认为True
+         async: true,
+
+    //     //请求成功后的回调
+         success: function (data) {
+             if (data) {
+
+                 localStorage.setItem("user",data);
+                 alert(data)
+             } else {
+                 alert('帐号或密码错误');
+             }
+         },
+         error: function () {
+             alert('服务端异常');
+         }
+
+     });
+}
+
+
+function getbookmarks() {
+    var arr = localStorage.getItem("post").split("|")
+    for(var n=0; n < arr.length-1; n++){
+        localStorage.setItem("bookmark".concat(n+1),arr[n]);
+        localStorage.setItem("icon".concat(n+1),arr[n].concat('/favicon.ico'));
+    }
+}
+
+
 
 
 
