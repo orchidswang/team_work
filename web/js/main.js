@@ -57,6 +57,7 @@ function determine_empty(id){
     }
     else {
         addbookmark(id);
+        location.reload();
     }
 }
 
