@@ -40,7 +40,7 @@ function addbookmark(id){
         document.getElementById('img'.concat(id)).src = localStorage.getItem('icon'.concat(id));
     }
 
-    document.getElementById('addBookmark').onclick =function (){add(id)};
+    document.getElementById('add_submit').onclick =function (){add(id)};
 
 }
 
@@ -176,7 +176,6 @@ function login_submit(){
 
 function register_submit() {
 
-    console.log({'user': $("#r-user").val(), 'password': $("#r-password").val()});
 
      $.ajax({
 
