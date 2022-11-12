@@ -12,7 +12,7 @@ public class sql {
             ResultSet rs = stmt.executeQuery("select * from weblogin where user='"+name0+"'");
             if(rs.next())
             {
-                String password=rs.getString("password");
+                String password=rs.getString("0keyword0");
                 System.out.println(password);
                 return password;
             }

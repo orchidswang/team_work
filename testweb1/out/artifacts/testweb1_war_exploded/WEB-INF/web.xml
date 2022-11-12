@@ -26,5 +26,29 @@
         <servlet-name>AddServlet</servlet-name>
         <url-pattern>/ADD.AddServlet</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <!-- 命名一个Servlet的名称 -->
+        <servlet-name>DeleteServlet</servlet-name>
+        <!-- 该Servlet对应的类 -->
+        <servlet-class>Delete.DeleteServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>DeleteServlet</servlet-name>
+        <url-pattern>/Delete.DeleteServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <!-- 命名一个Servlet的名称 -->
+        <servlet-name>RegisterServlet</servlet-name>
+        <!-- 该Servlet对应的类 -->
+        <servlet-class>Register.RegisterServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/Register.RegisterServlet</url-pattern>
+    </servlet-mapping>
 </web-app>
 

@@ -68,7 +68,12 @@ public class LoginServlet extends javax.servlet.http.HttpServlet {
                 session.setAttribute("password", pwd);// 将用户名和密码保存在session中
                 session.setAttribute("message","1111111111");
                 String rt=GetSql.Getwebsite(name);
-                response.getWriter().write(rt);
+                if(rt=="")
+                {
+                    response.getWriter().write("登录成功");
+                }
+                else
+                    response.getWriter().write(rt);
                 //response.sendRedirect("test.jsp");// 跳转到hello.jsp页面
             }
             else  {
