@@ -8,12 +8,25 @@ function hide(name) {
     document.getElementById(name).style.display = "none";
 }
 
+function logout(){
+    localStorage.clear()
+    location.reload();
+}
+
 
 /*将数据存入本地存储空间*/
 function addBookmark(id){
 
     var ipt = document.querySelector('.inputBookmark')
     var val = ipt.value;
+
+    //此处修改
+    if (!/(((http|ftp|https):\/\/)?[\w\-_]+(\.[\w\-_]+)+([\w\-.,@?^=%&:/~+#]*[\w\-@?^=%&/~+#])?)/.test(val)) {
+        alert("您输入的地址值不合法，请重新输入");
+        // 若输入地址值不合法，不允许刷新页面
+        return;
+    }
+
     var val2 = ipt.value.concat('/favicon.ico');
     localStorage.setItem('bookmark'.concat(id),val);
     localStorage.setItem('icon'.concat(id),val2);
@@ -190,6 +203,7 @@ function login_submit(){
 
                     alert($("#user").val()+'欢迎登录');
                 getbookmarks()
+                location.reload();
             } else {
                 alert('帐号或密码错误');
             }
@@ -223,7 +237,8 @@ function register_submit() {
             if (data) {
 
                 //localStorage.setItem("user",data);
-                alert(data)
+                alert("注册成功");
+                location.reload()
             } else {
                 alert('注册失败');
             }

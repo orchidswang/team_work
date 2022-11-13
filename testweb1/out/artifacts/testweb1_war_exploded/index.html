@@ -14,6 +14,7 @@
 </head>
 <body>
 
+
 <div id="mask"></div>
 
 <div class="center-in-center" id="add_bookmark_windows">
@@ -30,7 +31,27 @@
 </div>
 
 
-<div id="top"><button class="button_login_register" onclick = login()>登录</button>     <button class="button_login_register" onclick = register()>注册</button></div>
+<div class="top" id="top1"><button class="button_login_register" id="bt1" onclick = login()  >登录</button>    <button class="button_login_register" id="bt2" onclick = register()> 注册</button>
+    <script>
+        if (localStorage.getItem("user")!=null){
+            document.getElementById('top1').style.display = 'none';
+        }
+    </script>
+</div>
+
+<div class="top" id="top2"><button class="button_login_register" id="bt3" onclick =   ></button>
+    <button class="button_login_register" id="bt4" onclick = logout() > 注销登录</button>
+    <script>
+        var user = localStorage.getItem("user");
+        document.getElementById('bt3').innerText=user
+
+        if (localStorage.getItem("user")==null){
+            document.getElementById('top2').style.display = 'none';
+
+        }
+
+    </script>
+</div>
 
 
 <div class="center-in-center" id="login">

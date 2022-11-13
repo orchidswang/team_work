@@ -79,7 +79,7 @@ public class LoginServlet extends javax.servlet.http.HttpServlet {
             else  {
                 System.out.println(sql.answer(name));
                 System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-                response.sendRedirect("login.jsp?error=yes");
+                response.getWriter().write("");
             }
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
