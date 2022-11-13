@@ -3,7 +3,7 @@
 <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>WeNavi-make your borwser simpler</title>
+        <title>WeNavi-make your browser simpler</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -13,6 +13,9 @@
 
 </head>
     <body>
+    <script>
+    hide('top')
+    </script>
 
     <div id="mask"></div>
 
@@ -29,8 +32,14 @@
         </div>
     </div>
 
+    <div id="top">
+        <button class="button_login_register" onclick = login()>登录</button><button class="button_login_register" onclick = register()>注册</button>
+    </div>
 
-    <div id="top"><button class="button_login_register" onclick = login()>登录</button>     <button class="button_login_register" onclick = register()>注册</button></div>
+
+    <div id="user_top">
+        <p>1<p>
+    </div>
 
 
         <div class="center-in-center" id="login">

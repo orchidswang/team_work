@@ -14,6 +14,11 @@ function addBookmark(id){
 
     var ipt = document.querySelector('.inputBookmark')
     var val = ipt.value;
+    if (!/(((http|ftp|https):\/\/)?[\w\-_]+(\.[\w\-_]+)+([\w\-.,@?^=%&:/~+#]*[\w\-@?^=%&/~+#])?)/.test(val)) {
+        alert("您输入的地址值不合法，请重新输入");
+        // 若输入地址值不合法，不允许刷新页面
+        return;
+    }
     var val2 = ipt.value.concat('/favicon.ico');
     localStorage.setItem('bookmark'.concat(id),val);
     localStorage.setItem('icon'.concat(id),val2);
@@ -168,6 +173,11 @@ function close_add(){
     hide('add_bookmark_windows')
 }
 
+function logout(){
+    localStorage.clear()
+    location.reload();
+}
+
 function login_submit(){
     $.ajax({
 
@@ -190,16 +200,15 @@ function login_submit(){
 
                     alert($("#user").val()+'欢迎登录');
                 getbookmarks()
+                location.reload();
             } else {
                 alert('帐号或密码错误');
             }
         },
         error: function () {
-            alert()
+            alert("服务端异常")
         }
     });
-
-
 
 }
 
@@ -223,7 +232,7 @@ function register_submit() {
             if (data) {
 
                 //localStorage.setItem("user",data);
-                alert(data)
+                alert("注册成功")
             } else {
                 alert('注册失败');
             }

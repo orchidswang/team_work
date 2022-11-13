@@ -167,6 +167,8 @@ function login_submit(){
                 alert($("#user").val()+'欢迎登录')
                 getbookmarks()
                 location.reload();
+
+
             } else {
                 alert('帐号或密码错误');
             }
@@ -211,6 +213,11 @@ function register_submit() {
      });
 }
 
+function getuser(){
+    var user = "";
+    user = localStorage.getItem("user");
+    document.getElementById('user_top').innerText = "欢迎,"+user;
+}
 
 function getbookmarks() {
     var arr = localStorage.getItem("post").split("|")

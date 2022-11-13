@@ -3,14 +3,18 @@
     text-align: center;
 }
 
-#top {
-    margin-left: 94%;
+.top {
+    width: auto;
+}
+#user_top {
+    display: none;
+    margin-left: 92%
 }
 
 .button_login_register {
     background-color: rgba(255,255,255,0);
     border: rgba(255,255,255,0);
-    font-size: 20px;
+    font-size: 16px;
     font-family: 微软雅黑;
     font-weight: 500;
     color: #FFFFFF;
@@ -28,7 +32,7 @@
     height: 60px;
     border: 1px solid #FFFFFF;
     outline: none;
-
+    
     font-family:"微软雅黑 Light";
     font-size: 20px;
     text-align: center;
@@ -183,7 +187,6 @@
 #login {
     display: none;
     position: absolute;
-
 
     background: #FFFFFF;
     border-radius: 6px;
@@ -352,3 +355,6 @@ body {
     -o-background-size: cover;
     background-size: cover;
 }
+
+
+
